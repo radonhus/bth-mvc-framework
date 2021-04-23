@@ -36,9 +36,7 @@ class Game21Controller extends Controller
     {
 
         $post = $request->all();
-
         $game21Object = new Game21(intval($post["oneortwo"]));
-
         $data = $game21Object->playGame($post);
 
         session()->put('game21', $game21Object);
@@ -62,9 +60,7 @@ class Game21Controller extends Controller
     public function play(Request $request)
     {
         $post = $request->all();
-
         $game21Object = session()->get('game21');
-
         $data = $game21Object->playGame($post);
 
         session()->put('game21', $game21Object);

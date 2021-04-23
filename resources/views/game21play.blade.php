@@ -23,7 +23,7 @@
 
 <h2 {{ $data['showOnGameOver'] }}>New round?</h2>
 <p {{ $data['showOnGameOver'] }}>{{ $data['standings'] }}</p>
-<form method="post" class="game21-form" action="{{ url('/game21initiate') }}" {{ $data['showOnGameOver'] }}>
+<form method="post" class="game21-form" action="{{ url('/game21') }}" {{ $data['showOnGameOver'] }}>
     @csrf
     <label for="oneortwo">Number of dice: </label>
     <select name="oneortwo">
@@ -31,6 +31,7 @@
         <option value="2">2</option>
     </select>
     <br>
+    <input type="hidden" name="newround" value="newround">
     <input type="submit" name="startgame" value="New round" class="submit">
     <input type="submit" name="clearstandings" value="Clear standings + new round" class="submit">
 </form>

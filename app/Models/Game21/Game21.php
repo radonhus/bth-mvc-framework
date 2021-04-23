@@ -14,11 +14,15 @@ class Game21
     private string $hideOnGameOver;
     private string $showOnGameOver;
     private array $sum;
+    private int $cpuWins;
+    private int $userWins;
 
-    public function __construct(int $nrOfDice = 1)
+    public function __construct(int $nrOfDice = 1, int $cpuW = 0,  int $userW = 0)
     {
         $this->nrOfDice = $nrOfDice;
         $this->sum = [ "user" => 0, "cpu" => 0 ];
+        $this->cpuWins = $cpuW;
+        $this->userWins = $userW;
         $this->hideOnGameOver = "";
         $this->showOnGameOver = "hidden";
         $this->latestDiceImages = [];
@@ -31,9 +35,17 @@ class Game21
             "standings" => ""
         ];
 
+        if (isset($post["newround"])) {
+            $this->nrOfDice = intval($post["oneortwo"]);
+            $this->sum = [ "user" => 0, "cpu" => 0 ];
+            $this->hideOnGameOver = "";
+            $this->showOnGameOver = "hidden";
+            $this->latestDiceImages = [];
+        }
+
         if (isset($post["clearstandings"])) {
-            session()->put('cpuWins', 0);
-            session()->put('userWins', 0);
+            $this->cpuWins = 0;
+            $this->userWins = 0;
         }
 
         if (isset($post["stop"])) {
@@ -44,6 +56,8 @@ class Game21
             $data["hideOnGameOver"] = $this->hideOnGameOver;
             $data["showOnGameOver"] = $this->showOnGameOver;
             $data["userSum"] = $this->sum["user"];
+            $data["userWins"] = $this->userWins;
+            $data["cpuWins"] = $this->cpuWins;
             return $data;
         }
 
@@ -57,6 +71,8 @@ class Game21
         $data["hideOnGameOver"] = $this->hideOnGameOver;
         $data["showOnGameOver"] = $this->showOnGameOver;
         $data["userSum"] = $this->sum["user"];
+        $data["userWins"] = $this->userWins;
+        $data["cpuWins"] = $this->cpuWins;
         return $data;
     }
 
@@ -64,8 +80,6 @@ class Game21
     {
         $this->hideOnGameOver = "hidden";
         $this->showOnGameOver = "";
-        session()->put('cpuWins', session()->get('cpuWins') ?? 0);
-        session()->put('userWins', session()->get('userWins') ?? 0);
         $result = "";
 
         if ($sumUser <= 21) {
@@ -74,21 +88,21 @@ class Game21
             }
 
             if (($sumCpu > 21) || ($sumCpu < $sumUser)) {
-                session()->put('userWins', session()->get('userWins') + 1);
+                $this->userWins += 1;
                 $result .= "You won!";
                 $result .= " You got " . $sumUser . " points ";
                 $result .= "and your opponent got " . $sumCpu . " points.";
                 return $result;
             }
 
-            session()->put('cpuWins', session()->get('cpuWins') + 1);
+            $this->cpuWins += 1;
             $result .= "You lost!";
             $result .= " You got " . $sumUser . " points ";
             $result .= "and your opponent got " . $sumCpu . " points.";
             return $result;
         }
 
-        session()->put('cpuWins', session()->get('cpuWins') + 1);
+        $this->cpuWins += 1;
         $result = "You lost! You got " . $sumUser . " points.";
         return $result;
     }
@@ -96,7 +110,7 @@ class Game21
     private function standings(): string
     {
         $standings = "Overall standings, Player vs. Opponent: ";
-        $standings .= session()->get('userWins') . ' – ' . session()->get('cpuWins');
+        $standings .= $this->userWins . ' – ' . $this->cpuWins;
         return $standings;
     }
 
