@@ -11,7 +11,6 @@ class DiceController extends Controller
     /**
      * Start a new Yatzy session.
      *
-     * @param  string  $title
      * @param  object  $diceObject
      * @param  array  $data
      * @return \Illuminate\View\View

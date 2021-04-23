@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\YatzyController;
 use App\Http\Controllers\DiceController;
+use App\Http\Controllers\Game21Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,11 +23,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/game21', function () {
-    return view('game21', [
-        'title' => "Game 21 | DiceLaVerdad"
-    ]);
-});
+Route::get('/game21', [Game21Controller::class, 'welcome']);
+Route::post('/game21initiate', [Game21Controller::class, 'initiate']);
+Route::post('/game21', [Game21Controller::class, 'play']);
 
 Route::get('/dice', [DiceController::class, 'roll']);
 Route::post('/dice', [DiceController::class, 'roll']);

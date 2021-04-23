@@ -11,7 +11,6 @@ class YatzyController extends Controller
     /**
      * Start a new Yatzy session.
      *
-     * @param  string  $title
      * @param  object  $yatzyObject
      * @param  array  $data
      * @return \Illuminate\View\View
@@ -34,8 +33,9 @@ class YatzyController extends Controller
     /**
      * Play Yatzy using request data from HTML form.
      *
-     * @param  string  $title
      * @param  object  $yatzyObject
+     * @param  array  $request
+     * @param  array  $post
      * @param  array  $data
      * @return \Illuminate\View\View
      */

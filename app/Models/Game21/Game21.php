@@ -24,18 +24,19 @@ class Game21
         $this->latestDiceImages = [];
     }
 
-    public function playGame(): array
+    public function playGame(array $post = null): array
     {
         $data = [
-            "message" => "Roll your dice again, or stop - your choice!"
+            "message" => "Roll your dice again, or stop - your choice!",
+            "standings" => ""
         ];
 
-        if (isset($_POST["clearstandings"])) {
-            $_SESSION["cpuWins"] = 0;
-            $_SESSION["userWins"] = 0;
+        if (isset($post["clearstandings"])) {
+            session()->put('cpuWins', 0);
+            session()->put('userWins', 0);
         }
 
-        if (isset($_POST["stop"])) {
+        if (isset($post["stop"])) {
             $sumCpu = $this->calculateCpuResult();
             $data["message"] = $this->gameOver($this->sum["user"], $sumCpu);
             $data["standings"] = $this->standings();
@@ -63,31 +64,31 @@ class Game21
     {
         $this->hideOnGameOver = "hidden";
         $this->showOnGameOver = "";
-        $_SESSION["cpuWins"] = $_SESSION["cpuWins"] ?? 0;
-        $_SESSION["userWins"] = $_SESSION["userWins"] ?? 0;
+        session()->put('cpuWins', session()->get('cpuWins') ?? 0);
+        session()->put('userWins', session()->get('userWins') ?? 0);
         $result = "";
 
         if ($sumUser <= 21) {
             if ($sumUser == 21) {
-                $result = "<strong>WOW! You got 21!</strong> ";
+                $result = "WOW! You got 21! ";
             }
 
             if (($sumCpu > 21) || ($sumCpu < $sumUser)) {
-                $_SESSION["userWins"] += 1;
+                session()->put('userWins', session()->get('userWins') + 1);
                 $result .= "You won!";
                 $result .= " You got " . $sumUser . " points ";
                 $result .= "and your opponent got " . $sumCpu . " points.";
                 return $result;
             }
 
-            $_SESSION["cpuWins"] += 1;
+            session()->put('cpuWins', session()->get('cpuWins') + 1);
             $result .= "You lost!";
             $result .= " You got " . $sumUser . " points ";
             $result .= "and your opponent got " . $sumCpu . " points.";
             return $result;
         }
 
-        $_SESSION["cpuWins"] += 1;
+        session()->put('cpuWins', session()->get('cpuWins') + 1);
         $result = "You lost! You got " . $sumUser . " points.";
         return $result;
     }
@@ -95,7 +96,7 @@ class Game21
     private function standings(): string
     {
         $standings = "Overall standings, Player vs. Opponent: ";
-        $standings .= $_SESSION["userWins"] . " – " . $_SESSION["cpuWins"];
+        $standings .= session()->get('userWins') . ' – ' . session()->get('cpuWins');
         return $standings;
     }
 
