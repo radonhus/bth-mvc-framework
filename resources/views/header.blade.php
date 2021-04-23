@@ -8,10 +8,10 @@
 <div class="header-wrapper">
     <header>
         <nav>
-            <a href="/">Home</a>
-            <a href="/dice">Dice</a>
-            <a href="/game21">Game 21</a>
-            <a href="/yatzy">Yatzy</a>
+            <a href="{{ url('/') }}">Home</a>
+            <a href="{{ url('/dice') }}">Dice</a>
+            <a href="{{ url('/game21') }}">Game 21</a>
+            <a href="{{ url('/yatzy') }}">Yatzy</a>
         </nav>
     </header>
 </div>

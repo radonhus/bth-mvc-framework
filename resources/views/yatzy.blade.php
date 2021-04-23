@@ -8,7 +8,7 @@
     <p>Your score so far: {{ $data['totalPoints'] }}</p>
     <p>Rounds left:</p>
     @foreach ($data['roundsLeft'] as $value)
-    <img src="../../img/{{ $value }}.png" class="dice-image-small">
+    <img src="{{ asset('/img/' . $value . '.png') }}" class="dice-image-small">
     @endforeach
 </div>
 
@@ -16,12 +16,13 @@
     <p>Your final score: {{ $data['totalPoints'] }}</p>
 </div>
 
-<form method="post" class="yatzy-form" action="/yatzy">
+<form method="post" class="yatzy-form" action="{{ url('/yatzy') }}">
+    @csrf
     <p {{ $data['hideOn2RerollsMade'] }}>Select which dice to roll again (rerolls made: {{ $data['nrOfRerolls'] }})</p>
     <div class="yatzy-dice">
         @foreach ($data['diceArray'] as $key => $value)
         <div class="onedice">
-            <img src="../../img/{{ $value }}.png" class="dice-image"><br>
+            <img src="{{ asset('/img/' . $value . '.png') }}" class="dice-image"><br>
             <input type="checkbox" name="{{ $key }}" value="selected" {{ $data['hideOn2RerollsMade'] }}>
         </div>
         @endforeach
@@ -29,7 +30,8 @@
     <input type="submit" name="roll" value="Roll selected dice" class="submit" {{ $data['hideOn2RerollsMade'] }}>
 </form>
 
-<form method="post" class="yatzy-form" action="/yatzy">
+<form method="post" class="yatzy-form" action="{{ url('/yatzy') }}">
+    @csrf
     <label for="selectedRound" {{ $data['showOn2RerollsMade'] }} {{ $data['hideOnGameOver'] }}>Round is over. Save points as: </label>
     <select name="selectedRound" {{ $data['showOn2RerollsMade'] }} {{ $data['hideOnGameOver'] }}>
         @foreach ($data['roundsLeft'] as $value)

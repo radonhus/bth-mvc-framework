@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Yatzy\Yatzy;
+use Illuminate\Http\Request;
 
 class YatzyController extends Controller
 {
@@ -11,6 +12,7 @@ class YatzyController extends Controller
      * Start a new Yatzy session.
      *
      * @param  string  $title
+     * @param  object  $yatzyObject
      * @param  array  $data
      * @return \Illuminate\View\View
      */
@@ -21,7 +23,7 @@ class YatzyController extends Controller
 
         $data = $yatzyObject->startNewRound();
 
-        session(['yatzy' => $yatzyObject]);
+        session()->put('yatzy', $yatzyObject);
 
         return view('yatzy', [
             'title' => "Yatzy | DiceLaVerdad",
@@ -30,17 +32,27 @@ class YatzyController extends Controller
     }
 
     /**
-     * Play Yatzy using POST data.
+     * Play Yatzy using request data from HTML form.
      *
      * @param  string  $title
+     * @param  object  $yatzyObject
      * @param  array  $data
      * @return \Illuminate\View\View
      */
-    public function play()
+    public function play(Request $request)
     {
 
-        return view('dice', [
-            'title' => "Yatzy | DiceLaVerdad"
+        $post = $request->all();
+
+        $yatzyObject = session()->get('yatzy');
+
+        $data = $yatzyObject->play($post);
+
+        session()->put('yatzy', $yatzyObject);
+
+        return view('yatzy', [
+            'title' => "Yatzy | DiceLaVerdad",
+            'data' => $data
         ]);
     }
 }
