@@ -36,6 +36,7 @@ class Game21Controller extends Controller
     {
 
         $post = $request->all();
+
         $game21Object = new Game21(intval($post["oneortwo"]));
         $data = $game21Object->playGame($post);
 

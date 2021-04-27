@@ -1,0 +1,72 @@
+ ------ --------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\DiceController.php                                                           [39m 
+ ------ --------------------------------------------------------------------------------------------------- 
+  18     PHPDoc tag @param references unknown parameter: $data                                              
+  18     PHPDoc tag @param references unknown parameter: $diceObject                                        
+[39;49m  25     Method App\Http\Controllers\DiceController::roll() should return Illuminate\View\View but returns[39;49m[39;49m  [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                  
+ ------ --------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Game21Controller.php                                                                          [39m 
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  19     PHPDoc tag @param references unknown parameter: $data                                                               
+  19     PHPDoc tag @param references unknown parameter: $title                                                              
+[39;49m  21     Method App\Http\Controllers\Game21Controller::welcome() should return Illuminate\View\View but returns[39;49m[39;49m              [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                                   
+  35     PHPDoc tag @param for parameter $request with type array is incompatible with native type Illuminate\Http\Request.  
+  35     PHPDoc tag @param references unknown parameter: $data                                                               
+  35     PHPDoc tag @param references unknown parameter: $game21Object                                                       
+  35     PHPDoc tag @param references unknown parameter: $post                                                               
+[39;49m  45     Method App\Http\Controllers\Game21Controller::initiate() should return Illuminate\View\View but returns[39;49m[39;49m             [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                                   
+  61     PHPDoc tag @param for parameter $request with type array is incompatible with native type Illuminate\Http\Request.  
+  61     PHPDoc tag @param references unknown parameter: $data                                                               
+  61     PHPDoc tag @param references unknown parameter: $game21Object                                                       
+  61     PHPDoc tag @param references unknown parameter: $post                                                               
+[39;49m  69     Method App\Http\Controllers\Game21Controller::play() should return Illuminate\View\View but returns[39;49m[39;49m                 [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                                   
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\HelloWorldController.php                                                            [39m 
+ ------ ---------------------------------------------------------------------------------------------------------- 
+[39;49m  17     Method App\Http\Controllers\HelloWorldController::hello() should return Illuminate\View\View but returns[39;49m[39;49m  [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                         
+ ------ ---------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\YatzyController.php                                                                           [39m 
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  18     PHPDoc tag @param references unknown parameter: $data                                                               
+  18     PHPDoc tag @param references unknown parameter: $yatzyObject                                                        
+[39;49m  27     Method App\Http\Controllers\YatzyController::start() should return Illuminate\View\View but returns[39;49m[39;49m                 [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                                   
+  42     PHPDoc tag @param for parameter $request with type array is incompatible with native type Illuminate\Http\Request.  
+  42     PHPDoc tag @param references unknown parameter: $data                                                               
+  42     PHPDoc tag @param references unknown parameter: $post                                                               
+  42     PHPDoc tag @param references unknown parameter: $yatzyObject                                                        
+[39;49m  53     Method App\Http\Controllers\YatzyController::play() should return Illuminate\View\View but returns[39;49m[39;49m                  [39;49m
+[39;49m         [39;49mIlluminate\Contracts\View\Factory|Illuminate\Contracts\View\View.                                                   
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m tests\Unit\Controller\ControllerGame21Test.php                                                                                          [39m 
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+  44     Parameter #1 $expected of method PHPUnit\Framework\Assert::assertInstanceOf() expects class-string<Nyholm\Psr7\Response>, string given.  
+  54     Method App\Http\Controllers\Game21Controller::play() invoked with 0 parameters, 1 required.                                              
+  56     Parameter #1 $expected of method PHPUnit\Framework\Assert::assertInstanceOf() expects class-string<Nyholm\Psr7\Response>, string given.  
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m tests\Unit\Controller\ControllerYatzyTest.php                                                                                           [39m 
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+  44     Parameter #1 $expected of method PHPUnit\Framework\Assert::assertInstanceOf() expects class-string<Nyholm\Psr7\Response>, string given.  
+  66     Method App\Http\Controllers\YatzyController::play() invoked with 0 parameters, 1 required.                                               
+  68     Parameter #1 $expected of method PHPUnit\Framework\Assert::assertInstanceOf() expects class-string<Nyholm\Psr7\Response>, string given.  
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------- 
+
+[37;41m                                                                                                                        [39;49m
+[37;41m [ERROR] Found 31 errors                                                                                                [39;49m
+[37;41m                                                                                                                        [39;49m
+
