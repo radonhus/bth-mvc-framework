@@ -11,9 +11,9 @@ class DiceController extends Controller
     /**
      * Start a new Yatzy session.
      *
-     * @param  object  $diceObject
-     * @param  array  $data
-     * @return \Illuminate\View\View
+     * @property  object  $diceObject
+     * @property integer  $dice
+     * @return \Illuminate\Contracts\View\View
      */
     public function roll()
     {

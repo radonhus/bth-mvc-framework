@@ -1,92 +1,11 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-...EE..EEE.........................................               51 / 51 (100%)
+..................................................                50 / 50 (100%)
 
-Time: 00:03.474, Memory: 36.00 MB
+Time: 00:26.090, Memory: 36.00 MB
 
-There were 5 errors:
-
-1) App\Http\Controllers\ControllerGame21Test::testWelcomeReturnsResponseObject
-Illuminate\Contracts\Container\BindingResolutionException: Target [Illuminate\Contracts\View\Factory] is not instantiable.
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:1049
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:842
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:714
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:841
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:652
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:826
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:119
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:913
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\Game21Controller.php:22
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerGame21Test.php:42
-
-2) App\Http\Controllers\ControllerGame21Test::testPlayReturnsResponseObject
-ArgumentCountError: Too few arguments to function App\Http\Controllers\Game21Controller::play(), 0 passed in C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerGame21Test.php on line 54 and exactly 1 expected
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\Game21Controller.php:61
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerGame21Test.php:54
-
-3) App\Http\Controllers\ControllerYatzyTest::testWelcomeReturnsResponseObject
-Illuminate\Contracts\Container\BindingResolutionException: Target class [session] does not exist.
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:835
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:714
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:841
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:652
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:826
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:119
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:770
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\YatzyController.php:25
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php:42
-
-Caused by
-ReflectionException: Class session does not exist
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:833
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:714
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:841
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:652
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:826
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:119
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:770
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\YatzyController.php:25
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php:42
-
-4) App\Http\Controllers\ControllerYatzyTest::testStartYatzySession
-Illuminate\Contracts\Container\BindingResolutionException: Target class [session] does not exist.
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:835
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:714
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:841
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:652
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:826
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:119
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:770
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\YatzyController.php:25
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php:54
-
-Caused by
-ReflectionException: Class session does not exist
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:833
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:714
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:841
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Container\Container.php:652
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\Application.php:826
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:119
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:770
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\YatzyController.php:25
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php:54
-
-5) App\Http\Controllers\ControllerYatzyTest::testPlayReturnsResponseObject
-ArgumentCountError: Too few arguments to function App\Http\Controllers\YatzyController::play(), 0 passed in C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php on line 66 and exactly 1 expected
-
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\app\Http\Controllers\YatzyController.php:42
-C:\Users\Richard\Documents\dbwebb\mvc\me\framework\app\tests\Unit\Controller\ControllerYatzyTest.php:66
-
-ERRORS!
-Tests: 51, Assertions: 92, Errors: 5.
+OK (50 tests, 100 assertions)
 
 Generating code coverage report in Clover XML format ... done [00:00.012]
 
-Generating code coverage report in HTML format ... done [00:00.179]
+Generating code coverage report in HTML format ... done [00:00.134]

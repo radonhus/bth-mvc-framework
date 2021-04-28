@@ -12,9 +12,7 @@ class Game21Controller extends Controller
     /**
      * Welcome page.
      *
-     * @param  string  $title
-     * @param  array  $data
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function welcome()
     {
@@ -26,11 +24,10 @@ class Game21Controller extends Controller
     /**
      * Initiate a new Game21 session.
      *
-     * @param  object  $game21Object
-     * @param  array  $request
-     * @param  array  $post
-     * @param  array  $data
-     * @return \Illuminate\View\View
+     * @param  Request  $request
+     * @property array  $post
+     * @property  array  $request
+     * @return \Illuminate\Contracts\View\View
      */
     public function initiate(Request $request)
     {
@@ -52,11 +49,12 @@ class Game21Controller extends Controller
     /**
      * Initiate a new Game21 session.
      *
-     * @param  object  $game21Object
-     * @param  array  $request
-     * @param  array  $post
-     * @param  array  $data
-     * @return \Illuminate\View\View
+     * @param  Request  $request
+     * @property array  $post
+     * @property  array  $request
+     * @property object  $game21Object
+     * @property array  $data
+     * @return \Illuminate\Contracts\View\View
      */
     public function play(Request $request)
     {
