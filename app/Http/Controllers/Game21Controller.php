@@ -70,6 +70,4 @@ class Game21Controller extends Controller
             'post' => $post
         ]);
     }
-
-
 }

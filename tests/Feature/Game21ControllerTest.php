@@ -81,5 +81,4 @@ class Game21ControllerTest extends TestCase
 
         $this->assertInstanceOf("App\Http\Controllers\Controller", $controller);
     }
-
 }

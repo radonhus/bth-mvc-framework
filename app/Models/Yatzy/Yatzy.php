@@ -61,7 +61,7 @@ class Yatzy
             return $this->startNewRound();
         }
         $diceToReroll = [];
-        for ($i=0; $i <5; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             if (isset($post[strval($i)])) {
                 array_push($diceToReroll, $i);
             }

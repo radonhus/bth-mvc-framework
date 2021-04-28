@@ -62,5 +62,4 @@ class YatzyControllerTest extends TestCase
 
         $this->assertInstanceOf("App\Http\Controllers\Controller", $controller);
     }
-
 }

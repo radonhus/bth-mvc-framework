@@ -17,7 +17,7 @@ class Game21
     private int $cpuWins;
     private int $userWins;
 
-    public function __construct(int $nrOfDice = 1, int $cpuW = 0,  int $userW = 0)
+    public function __construct(int $nrOfDice = 1, int $cpuW = 0, int $userW = 0)
     {
         $this->nrOfDice = $nrOfDice;
         $this->sum = [ "user" => 0, "cpu" => 0 ];
@@ -131,7 +131,7 @@ class Game21
         $roll = new DiceHand($this->nrOfDice, $sides);
         $rollValuesArray = $roll->getLastRolls();
         $nrOfRolls = count($rollValuesArray);
-        for ($i=0; $i < $nrOfRolls; $i++) {
+        for ($i = 0; $i < $nrOfRolls; $i++) {
             $this->sum[$player] += intval($rollValuesArray[$i]);
         }
         return $roll->getLastRollsImages();

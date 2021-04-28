@@ -65,14 +65,14 @@ phpcs: prepare
 	[ ! -f .phpcs.xml ] || $(PHPCS) --standard=.phpcs.xml | tee build/phpcs
 
 phpcbf:
-ifneq ($(wildcard test),)
+ifneq ($(wildcard tests),)
 	- [ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml
 else
 	- [ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml src
 endif
 
 phpcpd: prepare
-	$(PHPCPD) src | tee build/phpcpd
+	$(PHPCPD) app | tee build/phpcpd
 
 phpmd: prepare
 	- [ ! -f .phpmd.xml ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
