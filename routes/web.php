@@ -35,6 +35,9 @@ Route::post('/dice', [DiceController::class, 'roll']);
 Route::get('/yatzy', [YatzyController::class, 'start']);
 Route::post('/yatzy', [YatzyController::class, 'play']);
 
+Route::get('/yatzyScore', [YatzyController::class, 'highScores']);
+Route::post('/yatzyScore', [YatzyController::class, 'submitHighScore']);
+
 Route::get('/books', [BookController::class, 'start']);
 
 // Added for mos example code

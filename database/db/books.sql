@@ -1,7 +1,6 @@
 USE riax20;
 
 DROP TABLE IF EXISTS books;
-
 CREATE TABLE IF NOT EXISTS books
 (
 	isbn VARCHAR(40) NOT NULL,
@@ -13,13 +12,12 @@ CREATE TABLE IF NOT EXISTS books
 )
 ;
 
-
 INSERT INTO books
     (isbn, title, author, image_url)
 VALUES
-	('1234', 'På motorcykel från Petrograd till Tiflis', 'Brusewitz, Per Emil', 'bildurl'),
-	('9113003240', 'Uppdrag Fred', 'Bildt, Carl', 'bildurl'),
-    ('9151820870', 'Dagligt liv i Wien på Mozarts och Schuberts tid', 'Berglund, Gunilla', 'bildurl')
+	('1234', 'På motorcykel från Petrograd till Tiflis', 'Brusewitz, Per Emil', 'book_tiflis.jpg'),
+	('9113003240', 'Uppdrag Fred', 'Bildt, Carl', 'book_bildt.jpg'),
+    ('9151820870', 'Dagligt liv i Wien på Mozarts och Schuberts tid', 'Berglund, Gunilla', 'book_wien.jpg')
 ;
 
 SELECT * FROM books;

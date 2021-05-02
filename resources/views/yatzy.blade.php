@@ -14,6 +14,15 @@
 
 <div class="yatzy-status" {{ $data['showOnGameOver'] }}>
     <p>Your final score: {{ $data['totalPoints'] }}</p>
+
+    <form method="post" class="yatzy-form" action="{{ url('/yatzyScore') }}">
+        @csrf
+        <p>Enter your name for the highscore list:</p>
+        <input type="text" maxlength="40" minlength="3" name="player" class="text">
+        <input type="hidden" name="score" value="{{ $data['totalPoints'] }}">
+        <input type="submit" name="submit" value="Submit score" class="submit">
+    </form>
+
 </div>
 
 <form method="post" class="yatzy-form" action="{{ url('/yatzy') }}">
@@ -40,6 +49,5 @@
     </select>
     <input type="submit" name="roundOver" value="Save points + start next round" class="submit" {{ $data['showOn2RerollsMade'] }} {{ $data['hideOnGameOver'] }}>
 </form>
-
 
 @include('footer')

@@ -9,20 +9,22 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     /**
-     * Get all books from SQLite db.
+     * Show all books from books table in database.
      *
      * @property  object  $bookDBObject
+     * @property  array  $data
      * @return \Illuminate\Contracts\View\View
      */
     public function start()
     {
-        
+
         $bookDBObject = new Book();
 
-        $bookDBObject->echoAllBookTitles();
+        $books = $bookDBObject->getAllBooks();
 
         return view('books', [
-            'title' => "Books | DiceLaVerdad"
+            'title' => "Books | DiceLaVerdad",
+            'books' => $books
         ]);
     }
 }
