@@ -6,6 +6,7 @@ use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\YatzyController;
 use App\Http\Controllers\DiceController;
 use App\Http\Controllers\Game21Controller;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::post('/dice', [DiceController::class, 'roll']);
 
 Route::get('/yatzy', [YatzyController::class, 'start']);
 Route::post('/yatzy', [YatzyController::class, 'play']);
+
+Route::get('/books', [BookController::class, 'start']);
 
 // Added for mos example code
 // Route::get('/hello-world', function () {
