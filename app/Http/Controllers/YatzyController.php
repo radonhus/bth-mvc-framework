@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Yatzy\Yatzy;
-use App\Models\Highscore;
+use App\Models\Yatzy\Highscore;
 use Illuminate\Http\Request;
 
 class YatzyController extends Controller
@@ -71,22 +71,22 @@ class YatzyController extends Controller
     }
 
     /**
-     * Save submitted score and call highScores to present highscores
+     * Save submitted score and call highScores() to present highscores
      *
-     * @param  Request  $request
-     * @property  array  $request
      * @property object  $newScore
+     * @property object  $view
      * @return \Illuminate\Contracts\View\View
      */
-    public function submitHighScore(Request $request)
+    public function submitHighScore(bool $unitTest = false)
     {
         $newScore = new Highscore();
 
-        $newScore->player = $request->player;
-        $newScore->score = $request->score;
+        if ($unitTest === false) {
+            $newScore->saveResult();
+        }
 
-        $newScore->save();
+        $view = $this->highScores();
 
-        return $this->highScores();
+        return $view;
     }
 }

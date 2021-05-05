@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Book;
+use App\Models\Book\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -12,7 +12,7 @@ class BookController extends Controller
      * Show all books from books table in database.
      *
      * @property  object  $bookDBObject
-     * @property  array  $data
+     * @property  array  $books
      * @return \Illuminate\Contracts\View\View
      */
     public function start()
