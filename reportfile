@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="3.6.0">
+<file name="C:\Users\Richard\Documents\dbwebb\mvc\me\orm\tests\config.php">
+ <error line="1" column="1" severity="warning" message="A file should declare new symbols (classes, functions, constants, etc.) and cause no other side effects, or it should execute logic with side effects, but should not do both. The first symbol is defined on line 8 and the first side effect is on line 11." source="PSR1.Files.SideEffects.FoundWithSymbols"/>
+</file>
+</checkstyle>
+

@@ -19,6 +19,7 @@
     <exclude-pattern>*/storage/*</exclude-pattern>
     <exclude-pattern>*/docs/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/app/Http/Middleware/*</exclude-pattern>
     <exclude-pattern>*/migrations/*</exclude-pattern>
 
     <arg name="report" value="summary"/>
