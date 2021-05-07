@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Http\Controllers\YatzyController;
 use App\Models\Yatzy\Yatzy;
+use App\Models\Yatzy\Highscore;
 
 class YatzyControllerTest extends TestCase
 {
@@ -74,4 +75,33 @@ class YatzyControllerTest extends TestCase
 
         $this->assertInstanceOf("Illuminate\Contracts\View\View", $view);
     }
+
+    /**
+     * Test posting a post-request with player and score to /yatzyScore
+     *
+     * @return void
+     */
+    public function testSubmitHighScore()
+    {
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/yatzyScore', [
+            'player' => 'Test',
+            'score' => '999'
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertSee('999');
+    }
+
+    /**
+     * Remove added database record after test
+     *
+     * @return void
+     */
+    protected function tearDown(): void
+    {
+        Highscore::where('score', '999')->delete();
+    }
+
 }

@@ -35,4 +35,33 @@ class YatzyHighscoreTest extends TestCase
 
         $this->assertIsArray($arrayOfHighscores);
     }
+
+    /**
+     * Test that saveResult() returns true
+     */
+    public function testSaveResult()
+    {
+        $highscoreObject3 = new Highscore();
+
+        $result = $highscoreObject3->saveResult('Test', '999');
+
+        $databaseQuery = $highscoreObject3->orderByDesc('score')
+                                ->limit(1)
+                                ->get();
+
+        $score = $databaseQuery[0]['score'];
+
+        $this->assertTrue($result);
+        $this->assertEquals($score, '999');
+    }
+
+    /**
+     * Remove added database record after test
+     *
+     * @return void
+     */
+    protected function tearDown(): void
+    {
+        Highscore::where('score', '999')->delete();
+    }
 }

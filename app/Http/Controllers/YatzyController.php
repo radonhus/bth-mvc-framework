@@ -73,15 +73,16 @@ class YatzyController extends Controller
     /**
      * Save submitted score and call highScores() to present highscores
      *
+     * @param  Request  $request
      * @property object  $newScore
      * @property object  $view
      * @return \Illuminate\Contracts\View\View
      */
-    public function submitHighScore()
+    public function submitHighScore(Request $request)
     {
         $newScore = new Highscore();
 
-        $newScore->saveResult();
+        $newScore->saveResult(request('player'), request('score'));
 
         $view = $this->highScores();
 

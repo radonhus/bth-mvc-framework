@@ -59,12 +59,16 @@ class Highscore extends Model
 
     /**
      * Save new result in highscore table
+     *
+     * @param  string  $player
+     * @param  string  $score
+     * @return bool
      */
-    public function saveResult()
+    public function saveResult(string $player, string $score)
     {
-        $this->player = request('player');
-        $this->score = request('score');
+        $this->player = $player;
+        $this->score = $score;
 
-        $this->save();
+        return $this->save();
     }
 }

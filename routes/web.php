@@ -30,7 +30,6 @@ Route::post('/game21initiate', [Game21Controller::class, 'initiate']);
 Route::post('/game21', [Game21Controller::class, 'play']);
 
 Route::get('/dice', [DiceController::class, 'roll']);
-Route::post('/dice', [DiceController::class, 'roll']);
 
 Route::get('/yatzy', [YatzyController::class, 'start']);
 Route::post('/yatzy', [YatzyController::class, 'play']);
