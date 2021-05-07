@@ -1,1 +1,0 @@
-C:\Users\Richard\Documents\dbwebb\mvc\me\orm\app\Http\Controllers\YatzyController.php:80	The method submitHighScore has a boolean flag argument $unitTest, which is a certain sign of a Single Responsibility Principle violation.

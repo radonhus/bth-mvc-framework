@@ -77,13 +77,11 @@ class YatzyController extends Controller
      * @property object  $view
      * @return \Illuminate\Contracts\View\View
      */
-    public function submitHighScore(bool $unitTest = false)
+    public function submitHighScore()
     {
         $newScore = new Highscore();
 
-        if ($unitTest === false) {
-            $newScore->saveResult();
-        }
+        $newScore->saveResult();
 
         $view = $this->highScores();
 

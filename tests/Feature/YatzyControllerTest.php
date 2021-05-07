@@ -74,16 +74,4 @@ class YatzyControllerTest extends TestCase
 
         $this->assertInstanceOf("Illuminate\Contracts\View\View", $view);
     }
-
-    /**
-     * Test that submitHighScore returns a View-class object
-     */
-    public function testSubmitHighScoreReturnsView()
-    {
-        $controller = new YatzyController();
-
-        $view = $controller->submitHighScore(true);
-
-        $this->assertInstanceOf("Illuminate\Contracts\View\View", $view);
-    }
 }
