@@ -101,7 +101,8 @@ class YatzyControllerTest extends TestCase
      */
     protected function tearDown(): void
     {
-        Highscore::where('score', '999')->delete();
-    }
+        $highscore = new Highscore();
 
+        $highscore->where('score', '999')->delete();
+    }
 }

@@ -62,6 +62,8 @@ class YatzyHighscoreTest extends TestCase
      */
     protected function tearDown(): void
     {
-        Highscore::where('score', '999')->delete();
+        $highscoreObject4 = new Highscore();
+
+        $highscoreObject4->where('score', '999')->delete();
     }
 }

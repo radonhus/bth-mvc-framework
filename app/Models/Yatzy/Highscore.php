@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 * @property string $player
 * @property string $score
 * @method orderByDesc(string $string1)
+* @method where(string $string1, string $string2)
 */
 class Highscore extends Model
 {

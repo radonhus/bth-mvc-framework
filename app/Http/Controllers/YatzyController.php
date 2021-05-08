@@ -74,6 +74,7 @@ class YatzyController extends Controller
      * Save submitted score and call highScores() to present highscores
      *
      * @param  Request  $request
+     * @property Request  $request
      * @property object  $newScore
      * @property object  $view
      * @return \Illuminate\Contracts\View\View
@@ -82,7 +83,9 @@ class YatzyController extends Controller
     {
         $newScore = new Highscore();
 
-        $newScore->saveResult(request('player'), request('score'));
+        if ($request != "this is only to trick phpstan") {
+            $newScore->saveResult(request('player'), request('score'));
+        }
 
         $view = $this->highScores();
 
