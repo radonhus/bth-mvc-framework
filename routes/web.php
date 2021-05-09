@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\YatzyController;
 use App\Http\Controllers\DiceController;
 use App\Http\Controllers\Game21Controller;
@@ -38,11 +37,3 @@ Route::get('/yatzyScore', [YatzyController::class, 'highScores']);
 Route::post('/yatzyScore', [YatzyController::class, 'submitHighScore']);
 
 Route::get('/books', [BookController::class, 'start']);
-
-// Added for mos example code
-// Route::get('/hello-world', function () {
-//     echo "Hello World";
-// });
-//
-// Route::get('/hello', [HelloWorldController::class, 'hello']);
-// Route::get('/hello/{message}', [HelloWorldController::class, 'hello']);

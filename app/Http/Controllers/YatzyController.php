@@ -83,7 +83,7 @@ class YatzyController extends Controller
     {
         $newScore = new Highscore();
 
-        if ($request != "this is only to trick phpstan") {
+        if ($request and is_string(request('player')) and is_string(request('score'))) {
             $newScore->saveResult(request('player'), request('score'));
         }
 

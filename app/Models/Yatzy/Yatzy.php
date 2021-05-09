@@ -23,7 +23,6 @@ class Yatzy
 
     public function startNewRound(): array
     {
-        $rollsAndValues = [];
         $data = [];
 
         $this->roundsCounter += 1;
@@ -71,7 +70,6 @@ class Yatzy
 
     public function reRoll($diceToReroll): array
     {
-        $rollsAndValues = [];
         $data = [];
 
         $rollsAndValues = $this->currentHand->rollDice($diceToReroll);
