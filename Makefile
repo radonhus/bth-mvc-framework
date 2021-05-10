@@ -7,6 +7,7 @@ PHPCPD     := $(BIN)/phpcpd
 PHPMD      := $(BIN)/phpmd
 PHPSTAN    := $(VENDORBIN)/phpstan
 PHPUNIT    := $(VENDORBIN)/phpunit
+PHPMETRIC  := $(VENDORBIN)/phpmetrics
 
 all:
 	@echo "Review the file 'Makefile' to see what targets are supported."
@@ -53,6 +54,7 @@ check-version:
 	$(PHPMD) --version
 	$(PHPSTAN) --version
 	$(PHPUNIT) --version
+	$(PHPMETRIC) --version
 
 prepare:
 	[ -d build ] || mkdir build
@@ -96,4 +98,7 @@ lint: cs phpcpd phpmd phpstan
 test: lint phpunit
 	composer validate
 
-metric: phploc
+phpmetrics: prepare
+	[ ! -f .phpmetrics.json ] || $(PHPMETRIC) --config=.phpmetrics.json | tee build/phpmetrics
+
+metric: phploc phpmetrics
