@@ -18,7 +18,9 @@
   </coverage>
   <testsuites>
     <testsuite name="all">
-      <directory>tests</directory>
+      <directory>tests/Feature</directory>
+      <directory>tests/Unit/Game21</directory>
+      <directory>tests/Unit/Yatzy</directory>
     </testsuite>
   </testsuites>
   <logging/>
