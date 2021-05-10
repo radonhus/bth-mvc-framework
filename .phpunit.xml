@@ -6,6 +6,7 @@
         <directory suffix=".php">app/Models/Book</directory>
         <directory suffix=".php">app/Models/Game21</directory>
         <directory suffix=".php">app/Models/Yatzy</directory>
+        <file>routes/web.php</file>
     </include>
     <exclude>
         <file>./app/Http/Controllers/Controller.php</file>

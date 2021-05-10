@@ -3,7 +3,7 @@ imports:
 
 filter:
     paths: ["app/Models/*", "app/Http/Controllers/*", "routes/web.php"]
-    excluded_paths: [vendor/*, tests/*, build/*, app/Models/User.php]
+    excluded_paths: [vendor/*, build/*, app/Models/User.php]
 
 build:
     nodes:
