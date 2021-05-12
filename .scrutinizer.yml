@@ -11,7 +11,13 @@ build:
             environment:
                 php:
                     version: 7.4
+                variables:
+                    APP_KEY: 'thisshouldgetreplacedbyartisancommand'
+                    DB_CONNECTION: 'sqlite'
+
     tests:
+        before:
+            - php artisan key:generate
         override:
             -
                 command: make phpunit
