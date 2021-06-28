@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620827334">
-  <project timestamp="1620827334">
+<coverage generated="1622018120">
+  <project timestamp="1622018120">
     <file name="C:\Users\Richard\Documents\dbwebb\mvc\me\ci\app\Http\Controllers\BookController.php">
       <class name="App\Http\Controllers\BookController" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -392,7 +392,7 @@
       <line num="106" type="method" name="calculatePoints" visibility="private" complexity="5" crap="5" count="4"/>
       <line num="108" type="stmt" count="4"/>
       <line num="109" type="stmt" count="4"/>
-      <line num="110" type="stmt" count="2"/>
+      <line num="110" type="stmt" count="3"/>
       <line num="113" type="stmt" count="4"/>
       <line num="114" type="stmt" count="1"/>
       <line num="116" type="stmt" count="4"/>
